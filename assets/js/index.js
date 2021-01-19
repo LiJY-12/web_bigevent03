@@ -1,21 +1,18 @@
 $(function(){
     //获取用户信息，并渲染用户名和头像
     getUserInfo()
-    var layer = layui.layer;
-    $('#btnLogout').on('click',function(){
-        //框架提供的询问框
-        
-            layer.confirm('是否确认退出', {icon: 3, title:'提示'}, function(index){
-               //清空本地token
-            localStorage.removeItem("token");
-            //页面跳转
-            location.href = "/login.html";
-            //关闭询问框
-                layer.close(index);
-              });
-        
+    var layer = layui.layer
+    $('#btnLogOut').on('click', function () {
+        layer.confirm('是否确定退出登录?', { icon: 3, title: '提示' }, function (index) {
+            //do something
+            // 1.清除本地存储的token数据
+            localStorage.removeItem('token')
+            // 2.跳转到登录界面
+            location.href = '/login.html'
+            layer.close(index);
+        });
     })
-})
+});
 
 //封装一个 获取用户信息，并渲染用户名和头像
 //必须是全局函数
@@ -45,8 +42,9 @@ function renderAvatar(user){
 
     }else{
         //没有头像
-        $('.layui-nav-img').hide();
         var text = name[0].toUpperCase();
+        $('.layui-nav-img').hide();
+        
         $('.text-avatar').show().html(text)
     }
 }
