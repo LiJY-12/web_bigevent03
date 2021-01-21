@@ -2,7 +2,7 @@ $(function(){
     //获取用户信息，并渲染用户名和头像
     getUserInfo()
     var layer = layui.layer
-    $('#btnLogOut').on('click', function () {
+    $('#btnLogout').on('click', function () {
         layer.confirm('是否确定退出登录?', { icon: 3, title: '提示' }, function (index) {
             //do something
             // 1.清除本地存储的token数据

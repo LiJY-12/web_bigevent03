@@ -12,7 +12,6 @@ $(function(){
 var form =layui.form;
 var layer = layui.layer;
 form.verify({
-
     pwd:[
         /^[\S]{6,16}$/,
         "密码必须6-16位，且不能输入空格"

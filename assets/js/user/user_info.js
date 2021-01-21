@@ -4,7 +4,7 @@ $(function(){
 
     form.verify({
         nickname:function(value){
-            if(value.length >6){
+            if(value.length > 6){
                 return "昵称字符在1到6之间"
             }
         }
